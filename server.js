@@ -12,10 +12,19 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const databaseUrl = "warmup";
-const collections = ["books"];
+const databaseUrl = "workout_tracker";
+const collections = ["exercises"];
 
 const db = mongojs(databaseUrl, collections);
 db.on("error", error => {
   console.log("Database Error:", error);
 });
+
+//ROUTES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+// Listen on port 3000
+app.listen(3000, () => {
+    console.log("App running on port 3000!");
+  });
